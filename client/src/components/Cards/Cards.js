@@ -1,5 +1,10 @@
 import React from 'react'
 
 export default function Cards (props) {
-    // Contenedor para las tarjetas
+    // 
+    return (
+        < >
+        <h1>Contenedor para las tarjetas</h1>
+        </>
+    )
 }
