@@ -1,16 +1,23 @@
 import './App.css'
 import { Routes, Route } from 'react-router-dom'
 import Nav from './components/Nav/Nav.js'
-
-
+import Cards from './components/Cards/Cards.js'
+import Card from './components/Card/Card.js'
 function App() {
+  function onSearch(personaje) {
+    console.log(personaje)
+  }
+
   return (
     <div className='App'>
-    <Nav/>
+    <Nav  onSearch={onSearch}/>
       <Routes>
-        <Route path="/" element={ <h1>Crear componente para mostrar los primeros 20 chars de la serie</h1> }/>
+        <Route path="/" element={ <Cards/> }/>
         
-        <Route path="/:name" element={ <h1>Crear componente para mostrar por nombre</h1> }/>
+        <Route path="/:name" render={(match) => ( 
+        <Card
+          match={match}
+        />)}/>
       </Routes>
     </div>
   )
