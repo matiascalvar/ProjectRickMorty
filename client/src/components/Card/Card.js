@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from '../Card/Card.module.css'
-import {useParams} from 'react-router-dom'
-import {results} from '/Users/matia/Desktop/Programming/HENRY/ProjectRickMorty/client/src/data/myDB'
+// import {useParams} from 'react-router-dom'
+// import {results} from '/Users/matia/Desktop/Programming/HENRY/ProjectRickMorty/client/src/data/myDB'
 
 export default function Card ({match, id, name, status, species, gender, image, episode}) {
     // console.log("match.param.name",match)

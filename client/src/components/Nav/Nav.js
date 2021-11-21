@@ -8,23 +8,23 @@ export default function Nav () {
     }
 
     return (
-        <nav>
-            <Link to="/">Home</Link>
+        <nav className="nav bg-light justify-content-between p-2">
+            <Link className="navbar-brand" to="/">Home</Link>
 
-            <form className="" 
+            <form className="d-flex" 
             onSubmit={(e) => {
             e.preventDefault();
-            setPersonaje("")
+            setPersonaje("") //it doesn't work 
             }}>
                 <input 
-                className="" 
+                className="form-control" 
                 placeholder="Ingrese un nombre..."
                 onChange={(e) =>handleChange(e)}
                 value={personaje}
                 />
 
                 <Link to={`/${personaje}`}>
-                    <button className="btn btn-primary" type="submit">Buscar</button>
+                    <button className="btn btn-primary" type="submit">Search</button>
                 </Link>
             </form>
         </nav>
