@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
+import {Link} from 'react-router-dom'
 
-export default function Nav ({onSearch}) {
+export default function Nav () {
     const [personaje, setPersonaje] = useState("")
     function handleChange(e) {
         setPersonaje(e.target.value);
@@ -8,19 +9,23 @@ export default function Nav ({onSearch}) {
 
     return (
         <nav>
+            <Link to="/">Home</Link>
+
             <form className="" 
             onSubmit={(e) => {
             e.preventDefault();
-            onSearch(personaje)
-            setPersonaje("")  
+            setPersonaje("")
             }}>
                 <input 
                 className="" 
                 placeholder="Ingrese un nombre..."
-                onChange={handleChange}
+                onChange={(e) =>handleChange(e)}
                 value={personaje}
                 />
-                <button className="btn btn-primary" type="submit">Buscar</button>
+
+                <Link to={`/${personaje}`}>
+                    <button className="btn btn-primary" type="submit">Buscar</button>
+                </Link>
             </form>
         </nav>
     )
